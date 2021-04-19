@@ -19,11 +19,62 @@ tr,td,th{
     border: 1px solid #ddd;
     padding: 8px;
 }
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+td{
+    background-color:rgb(196, 93, 110);
+    color: white;
+}
 
 .red{
-    background-color:red;
+    background-color:rgb(197, 26, 154);
 }
 
 .green{
-    background-color:green;
+    background-color:rgb(16, 189, 16);
+}
+
+.center{
+    display:flex;
+    justify-content: center;
+}
+input {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #3CBC8D;
+    color: white;
+}
+
+#add,#delete{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#table{
+    margin-right:0;
+}
+
+.mainly{
+    display:flex;
+    flex-direction:row;
+    margin-right:300px;
+}
+.deletes{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    
 }
