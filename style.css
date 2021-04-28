@@ -50,7 +50,7 @@ input {
     color: white;
 }
 
-#add,#delete{
+#add{
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -70,11 +70,6 @@ input {
 .mainly{
     display:flex;
     flex-direction:row;
-    margin-right:300px;
-}
-.deletes{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    
+    margin-right:500px;
+
 }
