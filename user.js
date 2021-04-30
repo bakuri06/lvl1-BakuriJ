@@ -40,10 +40,12 @@ class Table{
     this.generateAver(students,subjects);
     this.genBody(students);
     this.eventListeners();
+    this.deleteRow();
 
   }
   eventListeners(){
     document.getElementById('add').addEventListener('click',this.Add.bind(this));
+    document.getElementById('add2').addEventListener('click',this.AddSubject.bind(this));
   } 
   genHeader(){
     let thead = document.querySelector('#table thead');
@@ -89,6 +91,7 @@ class Table{
   genBody(student){
     let tmp =`<tr>`;
 
+
     for(let i=0;i<student.length;i++){
       tmp+=`<td> ${student[i].name} </td>
       <td> ${student[i].lastname} </td>`;
@@ -97,6 +100,7 @@ class Table{
           }
           tmp += `</tr>`;
       }
+
 
     
     
@@ -113,27 +117,14 @@ class Table{
     tmp += `</tr>`;
     document.querySelector('#table tbody').innerHTML+=tmp;
   }
-  
-  Add(){
-    let nameAdd = document.querySelector('#name');
-    let lastAdd = document.querySelector('#lastname');
-    let gradeCss = document.querySelector('#grade1');
-    let gradeHtml = document.querySelector('#grade2');
-    let gradePython = document.querySelector('#grade3');
-    let gradeJs = document.querySelector('#grade4');
+  AddSubject(){
     let newsubject = document.querySelector('#newsubj');
     let grade1 = document.querySelector('#newgrade1');
     let grade2 = document.querySelector('#newgrade2');
     let grade3 = document.querySelector('#newgrade3');
     let grade4 = document.querySelector('#newgrade4');
     let grade5 = document.querySelector('#newgrade5');
-    let laststudent={
-      name:nameAdd.value,
-      lastname:lastAdd.value,
-      grades:[Number(gradeCss.value),Number(gradeHtml.value),Number(gradePython.value),Number(gradeJs.value)]
-    }
     this.subject.push(newsubject.value);
-    this.student.push(laststudent);
     this.student[0].grades.push(Number(grade1.value));
     this.student[1].grades.push(Number(grade2.value));
     this.student[2].grades.push(Number(grade3.value));
@@ -142,8 +133,35 @@ class Table{
     this.genHeader();
     this.generateAver(students,subjects);
     this.genBody(students);
+  }
+  
+  Add(){
+    let nameAdd = document.querySelector('#name');
+    let lastAdd = document.querySelector('#lastname');
+    let gradeCss = document.querySelector('#grade1');
+    let gradeHtml = document.querySelector('#grade2');
+    let gradePython = document.querySelector('#grade3');
+    let gradeJs = document.querySelector('#grade4');
+    let laststudent={
+      name:nameAdd.value,
+      lastname:lastAdd.value,
+      grades:[Number(gradeCss.value),Number(gradeHtml.value),Number(gradePython.value),Number(gradeJs.value)]
+    }
+    this.student.push(laststudent);
+    this.genHeader();
+    this.generateAver(students,subjects);
+    this.genBody(students);
     
   }
+  deleteRow(){
+    let self=this;
+    document.querySelector('#delete').addEventListener('click',function(){
+      document.getElementById("table").deleteRow(1);
+      self.student.shift();
+      self.generateAver(this.student,this.subject);
+    });
+  }
+
 }
 
 let smth=new Table(students,subjects);
