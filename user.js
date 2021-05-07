@@ -1,169 +1,37 @@
-let subjects= ['Css','Html','Python','Js'];
-let students=[
-  {
-    name:'zura',
-    lastname:'tsiloshvili',
-    grades:[90,50,80,90]
-  },
-  {
-    name:'nata',
-    lastname:'qvatsa',
-    grades:[80,90,70,80]
-  },
-  {
-    name:'bakuri',
-    lastname:'jobava',
-    grades:[100,100,40,50]
-  },
-  {
-    name:'nika',
-    lastname:'kobaxidze',
-    grades:[80,90,70,50]
-  }
-];
+let input = document.getElementById('uniq');
 
-let aver;
-let table = document.getElementById('table');
-let tbody = document.querySelector('#table tbody');
-let tfoot =document.querySelector('#table tfoot');
+let show = document.querySelector('.show');
 
 
+let datavalue;
 
-//defining table
-class Table{
-  student;
-  subject;
-  constructor(students,subjects){
-    this.student=students;
-    this.subject=subjects;
-    this.genHeader();
-    this.generateAver(students,subjects);
-    this.genBody(students);
-    this.eventListeners();
-    this.deleteRow();
+document.querySelector('.but').addEventListener('click',function(){
+    console.log(input.value);
+    fetch(`https://itunes.apple.com/search?term=${input.value}`)
+        .then(response => response.json())
+        .then(data => {
 
-  }
-  eventListeners(){
-    document.getElementById('add').addEventListener('click',this.Add.bind(this));
-    document.getElementById('add2').addEventListener('click',this.AddSubject.bind(this));
-  } 
-  genHeader(){
-    let thead = document.querySelector('#table thead');
-    let tmp = '<tr>'+
-    '<th>Name</th>' + '<th>Last Name</th>';
-  
-    for(let i=0;i<this.subject.length;i++){
-        tmp+= `<th>${this.subject[i]} </th>`
+            datavalue = data.results;
+            console.log(datavalue);
+            render();
+        })
+})
+
+function render(){  
+    let smth = '';
+    for(let i=0;i<datavalue.length;i++){
+        smth+=`
+        <div class="container smth">
+            <h2>${datavalue[i].artistName}</h2>
+            <audio controls>
+                <source src="${datavalue[i].previewUrl}" type="audio/mpeg">
+            </audio
+        </div>
+        `;
+
+        console.log(datavalue[i].previewUrl);
+
     }
-  
-    tmp+='</tr>';
-  
-    thead.innerHTML = tmp;
-  }
-  generateAver(student,subject){
-    let average = [];
-    for(let i = 0 ;i<this.student.length;i++){
-      for(let j=0;j<this.subject.length;j++){
-        if(average[j]==undefined){
-          average[j] = this.student[i].grades[j];
-        }else if(average[j]){
-          average[j] += this.student[i].grades[j];
-        }
-      }
-    }
-  
-    for(let i=0;i<average.length;i++){
-      average[i]=Math.floor(average[i]/this.student.length);
-    }
-    let tmp='<tr>' + '<td colspan="2" style="text-align:center">Average</td>';
-  
-    for(let i =0 ;i<average.length;i++){
-       tmp+= `<td>${average[i]}</td>`;
-    }
-  
-    tmp+='</tr>';
-  
-    tfoot.innerHTML=tmp;
-
-    aver=average;
-  } 
-
-  genBody(student){
-    let tmp =`<tr>`;
-
-
-    for(let i=0;i<student.length;i++){
-      tmp+=`<td> ${student[i].name} </td>
-      <td> ${student[i].lastname} </td>`;
-          for(let j=0;j<student[i].grades.length;j++){
-              tmp+=`<td class="${aver[i]>student[i].grades[j] ? 'red' : 'green'}">${student[i].grades[j]} </td>`;
-          }
-          tmp += `</tr>`;
-      }
-
-
-    
-    
-    document.querySelector('#table tbody').innerHTML=tmp;
-  }
-
-  addRow(lastst){
-    let tmp =`<tr> 
-            <td> ${lastst.name} </td>
-            <td> ${lastst.lastname} </td>`;
-            for(let i=0;i<lastst.grades.length;i++){
-                tmp+=`<td class="${aver[i]>lastst.grades[i] ? 'red' : 'green'}">${lastst.grades[i]} </td>`;
-            }
-    tmp += `</tr>`;
-    document.querySelector('#table tbody').innerHTML+=tmp;
-  }
-  AddSubject(){
-    let newsubject = document.querySelector('#newsubj');
-    let grade1 = document.querySelector('#newgrade1');
-    let grade2 = document.querySelector('#newgrade2');
-    let grade3 = document.querySelector('#newgrade3');
-    let grade4 = document.querySelector('#newgrade4');
-    let grade5 = document.querySelector('#newgrade5');
-    this.subject.push(newsubject.value);
-    this.student[0].grades.push(Number(grade1.value));
-    this.student[1].grades.push(Number(grade2.value));
-    this.student[2].grades.push(Number(grade3.value));
-    this.student[3].grades.push(Number(grade4.value));
-    this.student[4].grades.push(Number(grade5.value));
-    this.genHeader();
-    this.generateAver(students,subjects);
-    this.genBody(students);
-  }
-  
-  Add(){
-    let nameAdd = document.querySelector('#name');
-    let lastAdd = document.querySelector('#lastname');
-    let gradeCss = document.querySelector('#grade1');
-    let gradeHtml = document.querySelector('#grade2');
-    let gradePython = document.querySelector('#grade3');
-    let gradeJs = document.querySelector('#grade4');
-    let laststudent={
-      name:nameAdd.value,
-      lastname:lastAdd.value,
-      grades:[Number(gradeCss.value),Number(gradeHtml.value),Number(gradePython.value),Number(gradeJs.value)]
-    }
-    this.student.push(laststudent);
-    this.genHeader();
-    this.generateAver(students,subjects);
-    this.genBody(students);
-    
-  }
-  deleteRow(){
-    let self=this;
-    document.querySelector('#delete').addEventListener('click',function(){
-      document.getElementById("table").deleteRow(1);
-      self.student.shift();
-      self.generateAver(this.student,this.subject);
-    });
-  }
+    show.innerHTML+=smth;
 
 }
-
-let smth=new Table(students,subjects);
-
-
