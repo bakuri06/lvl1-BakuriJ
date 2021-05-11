@@ -1,16 +1,41 @@
-function fibonacci(x) {
-    let massive = [0, 1];
-    for (let i = 1; i <= x; i++) {
-        let a = massive[i] + massive[i - 1];
-        if (a < 4000000) {
-            massive.push(a);
-        } else {
-            break;
-        }
-    }
-    return massive.filter(i => i % 2 == 0).reduce((a, b) => a + b);
+//burger menu
+const icon = document.querySelector('.icon');
+const menuBody = document.querySelector('.menu_body');
+
+if(icon){
+    icon.addEventListener('click',function(e){
+        icon.classList.toggle('_active');
+        menuBody.classList.toggle('_active');
+        document.body.classList.toggle('_lock');
+    })
 }
 
+//scrolling
 
+const menuLinks = document.querySelectorAll('.menu_link[data-goto]');
+console.log(menuLinks);
 
-  
+if(menuLinks.length > 0){
+    menuLinks.forEach(link => {
+        link.addEventListener('click',onMenuClick)
+    });
+    function onMenuClick(e){
+        const link = e.target;
+        if(link.dataset.goto && document.querySelector(link.dataset.goto)){
+            const gotoBlock = document.querySelector(link.dataset.goto);
+            const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('.beauty').offsetHeight;
+
+            if(icon.classList.contains('_active')){
+                icon.classList.remove('_active');
+                menuBody.classList.remove('_active');
+                document.body.classList.remove('_lock');
+            }
+            window.scrollTo({
+                top:gotoBlockValue,
+                behavior: "smooth"
+            });
+
+            e.preventDefault();
+        }
+    }
+}
