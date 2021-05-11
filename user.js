@@ -39,3 +39,25 @@ if(menuLinks.length > 0){
         }
     }
 }
+
+
+//modal
+
+const clickMe=document.querySelector('.glow-on-hover');
+const covered=document.querySelector('.covered');
+const answer=document.getElementById('no');
+
+
+clickMe.addEventListener('click',function(e){
+    if(clickMe){
+        covered.classList.toggle('_active');
+        document.body.classList.toggle('_lock');
+    }
+});
+
+if(answer){
+    answer.addEventListener('click',function(){
+        covered.classList.remove('_active');
+        document.body.classList.toggle('_lock');
+    })
+}
