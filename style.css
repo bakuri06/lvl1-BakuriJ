@@ -114,8 +114,11 @@ a{
 }
 
 .covered._active{
-    left:calc(40%);
-    top:50px;
+  /*  left:calc(40%);
+    top:50px;*/
+    left: auto;
+    align-items: center;
+    justify-self: center;
 }
 
 
