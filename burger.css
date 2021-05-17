@@ -1,0 +1,125 @@
+.icon {
+	top: 0px;
+	z-index: 5;
+	display: block;
+	position: relative;
+	width: 40px;
+	height: 20px;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.icon::before,
+.icon::after,
+.icon span {
+	left: 0;
+	position: absolute;
+	height: 15%;
+	width: 60%;
+	transition: all 0.3s ease 0s;
+	background-color: black;
+}
+
+.icon::before,
+.icon::after {
+	content: "";
+}
+
+.icon::before {
+	top: 0px;
+}
+
+.icon::after {
+	bottom: 0;
+}
+
+.icon span {
+	top: 50%;
+	transform: scale(1) translate(0px, -50%);
+}
+
+.burger_menu {
+	width: 300px;
+	height: 100vh;
+	flex-direction: column;
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	left: -150%;
+	transition: left 0.3s ease 0s;
+	padding: 50px 0;
+}
+
+.back_block {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+}
+
+.prev,
+.prev2 {
+	padding: 10px 0;
+	text-decoration: none;
+	color: black;
+	font-size: 1.5rem;
+	padding-left: 80px;
+}
+
+.prev:hover,
+.prev2:hover {
+	cursor: pointer;
+	color: black;
+}
+
+button.btn.btn-light.dropdown-toggle.resize {
+	padding: 10px 0;
+}
+
+ul.dropdown-menu.show {
+	display: flex;
+	flex-direction: column;
+}
+
+.burger_menu._active {
+	display: flex;
+	visibility: visible;
+	left: 0;
+}
+
+.burger_cover {
+	width: 100%;
+	height: 100%;
+}
+
+.fa.fa-bars.sidebar-bar {
+	display: none;
+}
+
+.side__bar {
+	width: 300px;
+	height: 100vh;
+	flex-direction: column;
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	z-index: 9999;
+	right: -150%;
+	transition: left 0.3s ease 0s;
+	padding: 50px 0;
+}
+
+.side__bar._active {
+	display: flex;
+	visibility: visible;
+	right: 0;
+}
+
+@media (max-width: 1200px) {
+	.fa.fa-bars.sidebar-bar {
+		display: block;
+		color: red;
+	}
+}

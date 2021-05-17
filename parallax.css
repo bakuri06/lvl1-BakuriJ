@@ -1,0 +1,62 @@
+.empty_div {
+	width: 90vw;
+	height: 200px;
+	visibility: hidden;
+	z-index: 0;
+}
+
+.section3 {
+	margin-bottom: 80px;
+}
+
+.banner.parallax {
+	background-image: url("http://themes.pixelstrap.com/multikart/assets/images/parallax/1.jpg");
+	background-size: cover;
+	background-position: center center;
+	display: block;
+}
+
+.banner.parallax {
+	background-attachment: fixed;
+}
+
+.banner {
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
+
+.parallax {
+	background-attachment: fixed;
+}
+
+.banner {
+	position: relative;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding-top: 190px;
+	padding-bottom: 190px;
+	background-position: center;
+}
+
+.banner-contain h2 {
+	color: #ff4c3b;
+	font-size: 85px;
+	text-transform: uppercase;
+}
+
+.banner-contain h3 {
+	font-size: 60px;
+	color: #333333;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.banner-contain h4 {
+	color: #777777;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5em;
+	padding-top: 10px;
+	margin-bottom: -5px;
+	line-height: 1.3;
+}
