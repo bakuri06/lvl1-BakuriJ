@@ -360,6 +360,7 @@ li.current a:hover {
 	flex-direction: column;
 	padding-left: 5px;
 	margin-top: 15px;
+	max-height:100%
 }
 
 .ratings {
@@ -396,7 +397,6 @@ h5 {
 .div_ofsect3 {
 	margin: 0px 10px;
 	max-width: 300px;
-	max-height: 300px;
 	position: relative;
 }
 
@@ -424,6 +424,72 @@ h2 {
 .text-center {
 	color: #777777;
 	font-size: 14px;
+}
+
+.text-uppercase.col-md-12.text-center.title{
+	font-size: 36px;
+    color: #222222;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.02em;
+}
+.section5{
+	margin-bottom:30px;
+}
+
+.media{
+	padding:23px 0;
+}
+
+.media svg{
+	width:60px;
+	height:60px;
+}
+
+.media_body h4{
+	margin-top:6px;
+	font-size:16px;
+	font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: 0.03em;
+}
+
+footer{
+	background-color: #F9F9F9;
+}
+
+.subcribe h4{
+	color: #222222;
+    font-weight: 700;
+}
+
+.subcribe p{
+	font-size: 14px;
+    color: #777777;
+}
+
+.btn.btn-solid{
+	padding: 13px 29px;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+    border: 2px solid var(--theme-deafult);
+    background-image: linear-gradient(30deg, #ff4c3b 50%, transparent 50%);
+    background-size: 850px;
+    background-repeat: no-repeat;
+    background-position: 0;
+    transition: background 300ms ease-in-out;
+}
+
+ul li{
+	padding-left:0px;
+}
+
+.media_body p{
+	font-size: 14px;
+    color: #777777;
+    line-height: 1;
+	text-transform: capitalize;
 }
 
 @media screen and (max-width: 767px) {
@@ -458,6 +524,11 @@ h2 {
 	}
 	.right_side {
 		display: none;
+	}
+
+	.media svg{
+		width:50px;
+		height:50px;
 	}
 }
 
