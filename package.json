@@ -1,0 +1,25 @@
+{
+  "name": "davaleba8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "user.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bakuri06/lvl1-BakuriJ.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bakuri06/lvl1-BakuriJ/issues"
+  },
+  "homepage": "https://github.com/bakuri06/lvl1-BakuriJ#readme",
+  "dependencies": {
+    "bootstrap": "^5.0.1"
+  },
+  "devDependencies": {
+    "sass": "^1.34.0"
+  }
+}
