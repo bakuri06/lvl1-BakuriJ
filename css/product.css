@@ -1,0 +1,184 @@
+.container.collection.px-5{
+    background-color: #f8f8f8;
+}
+
+.collection-filter-block{
+    margin-bottom: 30px;
+    padding: 0 20px;
+    border: 1px solid white;
+    background-color: #f9f9f9;
+}
+
+.collection-collapse-block .collapse-block-title{
+    position: relative;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #444444;
+    font-weight: 600;
+}
+
+.irs-start {
+    display: block;
+    top: 0;
+    left: 0;
+    cursor: default;
+    white-space: nowrap;
+    color: black;
+    font-size: 12px;
+    line-height: 1.333;
+    text-shadow: none;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-weight: 700;
+}
+
+.irs-to{
+    display: block;
+    top: 0;
+    left: 0;
+    cursor: default;
+    white-space: nowrap;
+    color: black;
+    font-size: 12px;
+    line-height: 1.333;
+    text-shadow: none;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-weight: 700;
+    background-color: red;
+    color: white;
+    padding: 3px;
+}
+
+.for_edit{
+    font-weight: 600;
+    color: #444444;
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+.for_editting{
+    line-height: 1.5;
+    color: #777777;
+    margin-bottom: 0;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+}
+
+.form-check-label{
+    text-transform: uppercase;
+}
+
+.down_arrow{
+    text-decoration: none;
+    color:black;
+}
+.color-selector ul{
+    padding-inline-start: 0px;
+}
+.color-selector ul li {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 3px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: 1px solid #444444;
+}
+
+.img-wrapper{
+    max-width:150px;
+}
+
+.makeitright{
+    height:385px;
+}
+
+.color-selector ul .color-1 {
+    background-color: white;
+}
+
+.color-selector ul .color-2{
+    background-color: rgb(114, 100, 100);
+}
+.color-selector ul .color-3{
+    background-color: red;
+}
+.color-selector ul .color-4{
+    background-color: purple;
+}
+.color-selector ul .color-5{
+    background-color: blue;
+}
+.color-selector ul .color-6{
+    background-color: yellow;
+}
+
+.color-selector ul .color-7{
+    background-color: green;
+}
+
+.collection-product-wrapper .product-top-filter {
+    border-bottom: 1px solid #dddddd;
+    border-top: 1px solid #dddddd;
+}
+.collection-product-wrapper .product-top-filter .product-filter-content .search-count, .collection-product-wrapper .product-top-filter .product-filter-content .sidebar-popup, .collection-product-wrapper .product-top-filter .popup-filter .search-count, .collection-product-wrapper .product-top-filter .popup-filter .sidebar-popup {
+    border-right: 1px solid #dddddd;
+    padding: 20px;
+    text-transform: capitalize;
+    width: 35%;
+}
+
+.collection-product-wrapper .product-top-filter .product-filter-content .collection-view, .collection-product-wrapper .product-top-filter .popup-filter .collection-view {
+    padding: 20px;
+    width: 10%;
+}
+.collection-product-wrapper .product-top-filter .product-filter-content .product-page-per-view, .collection-product-wrapper .product-top-filter .product-filter-content .product-page-filter, .collection-product-wrapper .product-top-filter .popup-filter .product-page-per-view, .collection-product-wrapper .product-top-filter .popup-filter .product-page-filter {
+    position: relative;
+    width: 20%;
+}
+
+.collection-product-wrapper .product-top-filter .product-filter-content .product-page-filter, .collection-product-wrapper .product-top-filter .popup-filter .product-page-filter {
+    width: 15%;
+}
+.product-top-filter {
+    border-bottom: 1px solid #dddddd;
+    border-top: 1px solid #dddddd;
+    padding:20px;
+
+}
+
+.search-count,.collection-grid-view{
+    border-right: 1px solid #dddddd;
+    padding-right:20px;
+}
+.product-page-per-view{
+    border-right: 1px solid #dddddd;
+    padding-right:20px;
+}
+.breadcrumb-item a,.breadcrumb-item.active{
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.breadcrumb-item a{
+    color: #555555;
+}
+.breadcrumb-item.active{
+    color: #6c757d;
+}
+
+.blll{
+    font-size: 16px;
+    font-weight: 400;
+    color: #222222;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+}
+
+.product-2-layout-view,.product-3-layout-view,.product-4-layout-view,.product-6-layout-view,.list-layout-view,.grid-layout-view{
+    cursor: pointer;
+}

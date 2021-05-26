@@ -8,6 +8,7 @@ const sidebar_btn=document.querySelector('.fa.fa-bars.sidebar-bar');
 const cover=document.querySelector('.cover');
 const close=document.querySelector('button.btn-close');
 
+
 if(icon){
     icon.addEventListener('click',function(e){
         e.stopPropagation();
@@ -48,5 +49,3 @@ close.addEventListener("click",closeModal);
 function closeModal(e){
     document.getElementById("exampleModal").style.display = "none";
 }
-
-

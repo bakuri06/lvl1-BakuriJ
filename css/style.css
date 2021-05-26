@@ -15,7 +15,7 @@ ul {
 
 ul li {
 	display: inline-block;
-	padding-left: 15px;
+	padding-left:15px;
 }
 
 .fa-phone {
@@ -161,14 +161,6 @@ ul li a {
 	flex-direction: column;
 }
 
-.icon_sect.hide1,
-.icon_sect.hide2,
-.icon_sect.hide3,
-.icon_sect.hide4 {
-	visibility: hidden;
-	opacity: 0;
-}
-
 .icon_sect>i {
 	margin-bottom: 4px;
 }
@@ -232,22 +224,6 @@ ul li a {
   
 .dropdown:hover .dropdown-content {display: block;}
   
-
-.div_ofsect3.show2:hover .hide2 {
-	visibility: visible;
-	opacity: 1;
-}
-
-.div_ofsect3.show3:hover .hide3 {
-	visibility: visible;
-	opacity: 1;
-}
-
-.div_ofsect3.show4:hover .hide4 {
-	visibility: visible;
-	opacity: 1;
-}
-
 .first_block:hover,
 .second_block:hover {
 	z-index: 100;
@@ -515,12 +491,6 @@ li.stylee{
     background-repeat: no-repeat;
     background-position: 0;
     transition: background 300ms ease-in-out;
-}
-
-
-
-ul li{
-	padding-left:0px;
 }
 
 .icon_nav ul li{
