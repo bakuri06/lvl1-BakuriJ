@@ -1,11 +1,79 @@
-const uniqaa=document.querySelector(".uniqal");
+//import {generateProducts,generateGridLayout } from './js/sidebar.js';
 
 const mainn=document.querySelector('.main');
+//changing theme
+const body=document.querySelector("body");
+const dark=document.querySelector(".dark-btn");
+
+const firsth2=document.querySelector(".page-title h2");
+const collection = document.querySelector(".collection");
+const collection_view = document.querySelector(".collection-view ul");
+const search_count = document.querySelector(".search-count h5");
+const product_detail = document.querySelectorAll("h4");
+const labels=document.querySelectorAll("label");
+const collectionfilter=document.querySelector('.collection-filter-block');
+
+const header_contact=document.querySelectorAll(".header_contact ul");
+const top_header=document.querySelector(".top_header");
+const dropbtn= document.querySelector(".dropbtn");
+
+
+
+
+dark.addEventListener("click",function(e){
+    const ratings = document.querySelectorAll(".ratings h4");
+    console.log(ratings);
+    body.classList.toggle("bg-dark");
+    firsth2.classList.toggle("light");
+    collection.classList.toggle("bg-dark");
+    collection_view.classList.toggle("light");
+    search_count.classList.toggle("light");
+    collectionfilter.classList.toggle("bg-dark");
+    for(let i=0;i<product_detail.length;i++){
+        product_detail[i].classList.toggle("light");
+    }
+    for(let i=0;i<labels.length;i++){
+        labels[i].classList.toggle("light");
+    }
+    top_header.classList.toggle("bg-dark");
+    for(let i=0;i<header_contact.length;i++){
+        header_contact[i].classList.toggle("light");
+    }
+    dropbtn.classList.toggle("bg-dark");
+    dropbtn.classList.toggle("light");
+})
+
+//finish
 
 const layoutview2 = document.querySelector(".product-2-layout-view");
 const layoutview3 = document.querySelector(".product-3-layout-view")
 const layoutview4 = document.querySelector(".product-4-layout-view")
 const layoutview6 = document.querySelector(".product-6-layout-view")
+
+const arrowd = document.querySelector("#arrow_d");
+const arrowdown = document.querySelector("#arrow_down");
+const arrowdown3 = document.querySelector("#arrow_down3");
+
+const blockContent = document.querySelector(".collection-collapse-block-content");
+const blockContent2 = document.querySelector(".collection-collapse-block-content_2");
+const blockContent3 = document.querySelector(".collection-collapse-block-content_3");
+
+
+arrowd.addEventListener("click",(e)=>{
+    e.preventDefault();
+    blockContent.classList.toggle("none");
+})
+
+arrowdown.addEventListener("click",(e)=>{
+    e.preventDefault();
+    blockContent2.classList.toggle("none");
+})
+
+arrowdown3.addEventListener("click",(e)=>{
+    e.preventDefault();
+    blockContent3.classList.toggle("none");
+})
+
 
 let datavalue;
 let sorting = document.querySelector("#information");
@@ -35,7 +103,6 @@ layoutview6.addEventListener('click',function(e){
 fullLayoutView.addEventListener("click",()=>{
     mainn.innerHTML="";
     generateGridLayout();
-    
 })
 
 gridLayoutView.addEventListener("click",()=>{
@@ -43,17 +110,17 @@ gridLayoutView.addEventListener("click",()=>{
 })
 
 
-sorting.addEventListener('click',()=>{
+sorting.addEventListener('change',()=>{
     if(sorting.value=="MinProducts"){
-        generateProducts(2,6,6,12)
-    }
-
-    if(sorting.value=="NormalProducts"){
         generateProducts(4,6,6,12)
     }
 
+    if(sorting.value=="NormalProducts"){
+        generateProducts(4,6,6,15)
+    }
+
     if(sorting.value=="HighProducts"){
-        generateProducts(3,6,6,12)
+        generateProducts(4,6,6,20)
     }
     
 })
@@ -66,14 +133,14 @@ fetch('https://fakestoreapi.com/products')
             generateProducts(3,4,6,20);
             }
 )
-    
+
 function generateProducts(lgcol=4,mdcol=6,smcol=6,changedLength=20){
     let tmp = '';
 
     for(let i=0;i<changedLength;i++){
             tmp+=`<div class="col-lg-${lgcol} col-md-${mdcol} col-sm-${smcol} position-relative">
             <div class="position-relative">
-                <img src="${datavalue[i].image}" class="w-100 makeitright"alt="">
+                <img src="${datavalue[i].image}" class="w-100"alt="">
                 </div>
     
                 <div class="product_detail">
@@ -129,6 +196,7 @@ function generateGridLayout(){
     mainn.innerHTML+=tmp;
 }
         
+
 
 
 
