@@ -265,7 +265,48 @@ a {
     transition: 0.5s ease;
     text-decoration: none;
 }
-a {
-    color: #0d6efd;
-    text-decoration: underline;
+
+.bg-dark{
+    color:white;
+}
+
+.bg-dark .collection-filter-block{
+    background-color: black;
+}
+
+.bg-dark .top_header{
+    background-color: black;
+}
+
+.bg-dark footer{
+    background-color:black;
+}
+
+.bg-dark .page-title h2{
+    color:white;
+}
+
+.bg-dark .breadcrumb .breadcrumb-item,.bg-dark .breadcrumb .breadcrumb-item a{
+    color:white;
+}
+
+.bg-dark .container.collection.px-5{
+    background-color: black;
+}
+
+.rtl-btn,.dark-btn{
+    color:black;
+}
+
+.bg-dark .search-count h5{
+    color:white;
+}
+
+.modal-bg{
+    position: relative;
+}
+
+button.btn-close{
+    position: absolute;
+    right:0;
 }

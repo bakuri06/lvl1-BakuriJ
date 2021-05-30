@@ -18,29 +18,8 @@ const top_header=document.querySelector(".top_header");
 const dropbtn= document.querySelector(".dropbtn");
 
 
-
-
 dark.addEventListener("click",function(e){
-    const ratings = document.querySelectorAll(".ratings h4");
-    console.log(ratings);
     body.classList.toggle("bg-dark");
-    firsth2.classList.toggle("light");
-    collection.classList.toggle("bg-dark");
-    collection_view.classList.toggle("light");
-    search_count.classList.toggle("light");
-    collectionfilter.classList.toggle("bg-dark");
-    for(let i=0;i<product_detail.length;i++){
-        product_detail[i].classList.toggle("light");
-    }
-    for(let i=0;i<labels.length;i++){
-        labels[i].classList.toggle("light");
-    }
-    top_header.classList.toggle("bg-dark");
-    for(let i=0;i<header_contact.length;i++){
-        header_contact[i].classList.toggle("light");
-    }
-    dropbtn.classList.toggle("bg-dark");
-    dropbtn.classList.toggle("light");
 })
 
 //finish
@@ -83,19 +62,19 @@ let gridLayoutView=document.querySelector(".grid-layout-view");
 
 //changing layout view
 layoutview2.addEventListener('click',function(e){
-    generateProducts(6,6,6);
+    document.getElementById("mainlyy").className = "row row-cols-lg-2 row-cols-md-3";
 })
 
 layoutview3.addEventListener('click',function(e){
-    generateProducts(4,6,6);
+    document.getElementById("mainlyy").className = "row row-cols-lg-4 row-cols-md-3";
 })
 
 layoutview4.addEventListener('click',function(e){
-    generateProducts(3,6,6);
+    document.getElementById("mainlyy").className = "row row-cols-lg-3 row-cols-md-3";
 })
 
 layoutview6.addEventListener('click',function(e){
-    generateProducts(2,6,6);
+    document.getElementById("mainlyy").className = "row row-cols-lg-6 row-cols-md-3";
 })
 
 //make it full
@@ -103,24 +82,25 @@ layoutview6.addEventListener('click',function(e){
 fullLayoutView.addEventListener("click",()=>{
     mainn.innerHTML="";
     generateGridLayout();
+    document.getElementById("mainlyy").className = "row row-cols-lg-1";
 })
 
 gridLayoutView.addEventListener("click",()=>{
-    generateProducts(3,6,6);
+    generateProducts();
 })
 
 
 sorting.addEventListener('change',()=>{
     if(sorting.value=="MinProducts"){
-        generateProducts(4,6,6,12)
+        generateProducts(12)
     }
 
     if(sorting.value=="NormalProducts"){
-        generateProducts(4,6,6,15)
+        generateProducts(15)
     }
 
     if(sorting.value=="HighProducts"){
-        generateProducts(4,6,6,20)
+        generateProducts(20)
     }
     
 })
@@ -130,15 +110,15 @@ fetch('https://fakestoreapi.com/products')
         .then(json=> 
             {
             datavalue=json;
-            generateProducts(3,4,6,20);
+            generateProducts(20);
             }
 )
 
-function generateProducts(lgcol=4,mdcol=6,smcol=6,changedLength=20){
+function generateProducts(changedLength=20){
     let tmp = '';
 
     for(let i=0;i<changedLength;i++){
-            tmp+=`<div class="col-lg-${lgcol} col-md-${mdcol} col-sm-${smcol} position-relative">
+            tmp+=`<div class="col position-relative">
             <div class="position-relative">
                 <img src="${datavalue[i].image}" class="w-100"alt="">
                 </div>
@@ -170,7 +150,7 @@ function generateGridLayout(){
 
     for(let i=0;i<20;i++){
         tmp+=`
-        <div class="col-lg-12">
+        <div class="col">
         <div class="d-flex align-items-center">
       <div class="img-wrapper">
          <img src="${datavalue[i].image}" class="w-100" alt="">
